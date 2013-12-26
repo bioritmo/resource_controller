@@ -35,25 +35,25 @@ module ResourceController
           show do
             wants.html
 
-            failure.wants.html { render :text => "Member object not found." }
+            failure.wants.html { render :text => "Não encontrado." }
           end
 
           create do
-            flash "Successfully created!"
+            flash "Criado com sucesso!"
             wants.html { redirect_to object_url }
 
             failure.wants.html { render :action => "new" }
           end
 
           update do
-            flash "Successfully updated!"
+            flash "Atualizado com sucesso!"
             wants.html { redirect_to object_url }
 
             failure.wants.html { render :action => "edit" }
           end
 
           destroy do
-            flash "Successfully removed!"
+            flash "Excluído com sucesso!"
             wants.html { redirect_to collection_url }
             failure.wants.html { redirect_to object_url }
           end
